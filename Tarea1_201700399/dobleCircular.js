@@ -1,4 +1,4 @@
-class nodo {
+class Nodo {
     constructor(dato){
         this.dato = dato
         this.siguiente = null
@@ -10,29 +10,28 @@ class listaDobleCircular{
     constructor() {
         this.primero = null
         this.cola = null
-        this.nodoActual = null
         this.longitud=0
     }
 
     insertar(dato)
     {
-        
-        if(this.primero== null){
-            let nuevo = new nodo(dato)
-            this.primero = nuevo
-            this.cola = nuevo
+        let nodo = new Nodo(dato)
+        if(this.primero == null){
+            //let nodo = new Nodo(dato)
+            this.primero = nodo
+            this.cola = nodo
 
-            nodo.siguiente = nuevo
-            nodo.anterior = nuevo
+            nodo.siguiente = nodo
+            nodo.anterior = nodo
             console.log("El dato instertado es "+ dato)
 
         }
         else {
-            this.primero.anterior =nuevo
+            this.primero.anterior =nodo
             nodo.siguiente = this.primero
             nodo.anterior = this.cola
-            this.primero = nuevo
-            this.cola.siguiente = nuevo
+            this.primero = nodo
+            this.cola.siguiente = nodo
             console.log("Se ha insertado "+dato)
 
         }
